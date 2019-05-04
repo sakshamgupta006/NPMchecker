@@ -4,6 +4,7 @@ import pprint
 import io
 
 npmRank = "../assets/npmRank.json"
+noUrlCount = 0
 with open(npmRank, "r") as read_file:
 	data = json.load(read_file)
 	for index, package in enumerate(data):
@@ -19,7 +20,6 @@ with open(npmRank, "r") as read_file:
 		downloadCommand = "wget -q -O " + repoName + ".json " + npmUrl
 		os.system(downloadCommand)
 
-		noUrlCount = 0
 		jsonRepoName = repoName + ".json"
 		with open(jsonRepoName, "r") as read_file:
 			dataNpm = json.load(read_file)
