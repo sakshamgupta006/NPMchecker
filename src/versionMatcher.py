@@ -18,7 +18,7 @@ with urllib.request.urlopen(testUrl) as url:
             version.encode("utf-8")
             # print (version)
             for index, value in enumerate(githubData):
-                if githubData[index]["name"] == (version):
+                if githubData[index]["name"] == ((version) or ("v" + version)):
                     print (version, "Matched")
         # print ("Github Versions")
         # for index, value in enumerate(githubData):
