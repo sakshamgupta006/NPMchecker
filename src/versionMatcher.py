@@ -4,7 +4,7 @@ import pprint
 import os
 
 #get the version from npm registry
-repoName = "axios"
+repoName = "winston"
 githubUrl = "https://github.com/axios/axios.git"
 testUrl = "https://registry.npmjs.org/" + repoName
 
