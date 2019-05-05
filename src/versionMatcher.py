@@ -4,10 +4,10 @@ import pprint
 import os
 
 #get the version from npm registry
-repoName = "winston"
-owner = "winstonjs"
-githubUrl = "https://github.com/winstonjs/winston.git"
-testUrl = "https://registry.npmjs.org/" + repoName
+repoName = "graphql-js"
+owner = "graphql"
+githubUrl = "https://github.com/graphql/graphql-js.git"
+testUrl = "https://registry.npmjs.org/" + owner
 
 with urllib.request.urlopen(testUrl) as url:
     npmReg = json.loads(url.read().decode())
@@ -18,7 +18,7 @@ with urllib.request.urlopen(testUrl) as url:
             version.encode("utf-8")
             # print (version)
             for index, value in enumerate(githubData):
-                if githubData[index]["name"] == ((version) or ("v" + version)):
+                if githubData[index]["name"] == (version) or githubData[index]["name"] == ("v" + version):
                     print (version, "Matched")
         # print ("Github Versions")
         # for index, value in enumerate(githubData):

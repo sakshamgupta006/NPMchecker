@@ -1,0 +1,442 @@
+{
+  "bundle": {
+    "commonSourceDirectory": "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/",
+    "sourceFiles": [
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/types.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/utilities.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/classifier.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/stringCompletions.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/completions.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/documentHighlights.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/documentRegistry.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/importTracker.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/findAllReferences.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/getEditsForFileRename.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/goToDefinition.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/jsDoc.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/navigateTo.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/navigationBar.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/organizeImports.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/outliningElementsCollector.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/patternMatcher.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/preProcess.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/rename.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/signatureHelp.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/sourcemaps.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/suggestionDiagnostics.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/symbolDisplay.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/transpile.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/formattingContext.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/formattingScanner.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/rule.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/rules.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/rulesMap.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/formatting.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/formatting/smartIndenter.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/textChanges.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codeFixProvider.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactorProvider.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/addConvertToUnknownForNonOverlappingTypes.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/addMissingInvocationForDecorator.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/addNameToNamelessParameter.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/annotateWithTypeFromJSDoc.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/inferFromUsage.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/convertFunctionToEs6Class.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/convertToAsyncFunction.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/convertToEs6Module.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/correctQualifiedNameToIndexedAccessType.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixClassIncorrectlyImplementsInterface.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/importFixes.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixSpelling.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixAddMissingMember.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixAddMissingNewOperator.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixCannotFindModule.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixClassDoesntImplementInheritedAbstractMember.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixClassSuperMustPrecedeThisAccess.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixConstructorForDerivedNeedSuperCall.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixEnableExperimentalDecorators.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixExtendsInterfaceBecomesImplements.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixForgottenThisPropertyAccess.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixUnusedIdentifier.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixUnreachableCode.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixUnusedLabel.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixJSDocTypes.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixAwaitInSyncFunction.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/disableJsDiagnostics.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/helpers.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixInvalidImportSyntax.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixStrictClassInitialization.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/generateTypes.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/requireInTs.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/useDefaultImport.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/fixAddModuleReferTypeMissingTypeof.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/codefixes/convertToMappedObjectType.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/convertExport.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/convertImport.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/extractSymbol.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/generateGetAccessorAndSetAccessor.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/moveToNewFile.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/addOrRemoveBracesToArrowFunction.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/refactors/convertParamsToDestructuredObject.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/services.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/breakpoints.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/transform.ts",
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/services/shims.ts"
+    ],
+    "js": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 13,
+          "kind": "prologue",
+          "data": "use strict"
+        },
+        {
+          "pos": 14,
+          "end": 396,
+          "kind": "emitHelpers",
+          "data": "typescript:assign"
+        },
+        {
+          "pos": 397,
+          "end": 982,
+          "kind": "emitHelpers",
+          "data": "typescript:extends"
+        },
+        {
+          "pos": 983,
+          "end": 1688099,
+          "kind": "text"
+        }
+      ],
+      "sources": {
+        "prologues": [
+          {
+            "file": 0,
+            "text": "",
+            "directives": [
+              {
+                "pos": -1,
+                "end": -1,
+                "expression": {
+                  "pos": -1,
+                  "end": -1,
+                  "text": "use strict"
+                }
+              }
+            ]
+          }
+        ],
+        "helpers": [
+          "typescript:assign",
+          "typescript:extends"
+        ]
+      }
+    },
+    "dts": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 257,
+          "kind": "text"
+        },
+        {
+          "pos": 257,
+          "end": 314,
+          "kind": "internal"
+        },
+        {
+          "pos": 315,
+          "end": 397,
+          "kind": "text"
+        },
+        {
+          "pos": 397,
+          "end": 482,
+          "kind": "internal"
+        },
+        {
+          "pos": 483,
+          "end": 2907,
+          "kind": "text"
+        },
+        {
+          "pos": 2907,
+          "end": 3110,
+          "kind": "internal"
+        },
+        {
+          "pos": 3111,
+          "end": 3439,
+          "kind": "text"
+        },
+        {
+          "pos": 3439,
+          "end": 3485,
+          "kind": "internal"
+        },
+        {
+          "pos": 3486,
+          "end": 7148,
+          "kind": "text"
+        },
+        {
+          "pos": 7148,
+          "end": 7265,
+          "kind": "internal"
+        },
+        {
+          "pos": 7266,
+          "end": 7632,
+          "kind": "text"
+        },
+        {
+          "pos": 7632,
+          "end": 7704,
+          "kind": "internal"
+        },
+        {
+          "pos": 7705,
+          "end": 7766,
+          "kind": "text"
+        },
+        {
+          "pos": 7766,
+          "end": 7963,
+          "kind": "internal"
+        },
+        {
+          "pos": 7964,
+          "end": 7970,
+          "kind": "text"
+        },
+        {
+          "pos": 7970,
+          "end": 7997,
+          "kind": "internal"
+        },
+        {
+          "pos": 7998,
+          "end": 13091,
+          "kind": "text"
+        },
+        {
+          "pos": 13091,
+          "end": 13156,
+          "kind": "internal"
+        },
+        {
+          "pos": 13157,
+          "end": 15409,
+          "kind": "text"
+        },
+        {
+          "pos": 15409,
+          "end": 15469,
+          "kind": "internal"
+        },
+        {
+          "pos": 15470,
+          "end": 21315,
+          "kind": "text"
+        },
+        {
+          "pos": 21315,
+          "end": 21425,
+          "kind": "internal"
+        },
+        {
+          "pos": 21426,
+          "end": 21497,
+          "kind": "text"
+        },
+        {
+          "pos": 21497,
+          "end": 21537,
+          "kind": "internal"
+        },
+        {
+          "pos": 21538,
+          "end": 28277,
+          "kind": "text"
+        },
+        {
+          "pos": 28277,
+          "end": 28326,
+          "kind": "internal"
+        },
+        {
+          "pos": 28327,
+          "end": 41816,
+          "kind": "text"
+        },
+        {
+          "pos": 41816,
+          "end": 59346,
+          "kind": "internal"
+        },
+        {
+          "pos": 59347,
+          "end": 59415,
+          "kind": "text"
+        },
+        {
+          "pos": 59415,
+          "end": 60122,
+          "kind": "internal"
+        },
+        {
+          "pos": 60123,
+          "end": 60125,
+          "kind": "text"
+        },
+        {
+          "pos": 60125,
+          "end": 63950,
+          "kind": "internal"
+        },
+        {
+          "pos": 63951,
+          "end": 67867,
+          "kind": "text"
+        },
+        {
+          "pos": 67867,
+          "end": 67947,
+          "kind": "internal"
+        },
+        {
+          "pos": 67948,
+          "end": 67985,
+          "kind": "text"
+        },
+        {
+          "pos": 67985,
+          "end": 68212,
+          "kind": "internal"
+        },
+        {
+          "pos": 68213,
+          "end": 68413,
+          "kind": "text"
+        },
+        {
+          "pos": 68413,
+          "end": 68578,
+          "kind": "internal"
+        },
+        {
+          "pos": 68579,
+          "end": 68581,
+          "kind": "text"
+        },
+        {
+          "pos": 68581,
+          "end": 83072,
+          "kind": "internal"
+        },
+        {
+          "pos": 83073,
+          "end": 83231,
+          "kind": "text"
+        },
+        {
+          "pos": 83231,
+          "end": 86456,
+          "kind": "internal"
+        },
+        {
+          "pos": 86457,
+          "end": 87127,
+          "kind": "text"
+        },
+        {
+          "pos": 87127,
+          "end": 87337,
+          "kind": "internal"
+        },
+        {
+          "pos": 87338,
+          "end": 87340,
+          "kind": "text"
+        },
+        {
+          "pos": 87340,
+          "end": 111406,
+          "kind": "internal"
+        },
+        {
+          "pos": 111407,
+          "end": 111664,
+          "kind": "text"
+        },
+        {
+          "pos": 111664,
+          "end": 111965,
+          "kind": "internal"
+        },
+        {
+          "pos": 111966,
+          "end": 111968,
+          "kind": "text"
+        },
+        {
+          "pos": 111968,
+          "end": 115952,
+          "kind": "internal"
+        },
+        {
+          "pos": 115953,
+          "end": 116062,
+          "kind": "text"
+        },
+        {
+          "pos": 116062,
+          "end": 116276,
+          "kind": "internal"
+        },
+        {
+          "pos": 116277,
+          "end": 117016,
+          "kind": "text"
+        },
+        {
+          "pos": 117016,
+          "end": 117473,
+          "kind": "internal"
+        },
+        {
+          "pos": 117474,
+          "end": 117613,
+          "kind": "text"
+        },
+        {
+          "pos": 117613,
+          "end": 118466,
+          "kind": "internal"
+        },
+        {
+          "pos": 118467,
+          "end": 118768,
+          "kind": "text"
+        },
+        {
+          "pos": 118768,
+          "end": 118983,
+          "kind": "internal"
+        },
+        {
+          "pos": 118984,
+          "end": 119480,
+          "kind": "text"
+        },
+        {
+          "pos": 119480,
+          "end": 134096,
+          "kind": "internal"
+        }
+      ]
+    }
+  },
+  "version": "3.4.4"
+}

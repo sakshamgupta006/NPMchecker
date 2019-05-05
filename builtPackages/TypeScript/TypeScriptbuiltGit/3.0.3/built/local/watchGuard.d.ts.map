@@ -1,0 +1,1 @@
+{"version":3,"file":"watchGuard.d.ts","sourceRoot":"","sources":["../../src/watchGuard/watchGuard.ts"],"names":[],"mappings":"AAKA,QAAA,MAAM,aAAa,QAAkB,CAAC;AACtC,QAAA,MAAM,EAAE,EAAE;IAAE,KAAK,CAAC,aAAa,EAAE,MAAM,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ,EAAE,MAAM,EAAE,GAAG,GAAG,CAAA;CAAkB,CAAC"}

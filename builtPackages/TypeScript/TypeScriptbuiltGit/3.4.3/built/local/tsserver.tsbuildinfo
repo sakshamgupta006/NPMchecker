@@ -1,0 +1,129 @@
+{
+  "bundle": {
+    "commonSourceDirectory": "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/",
+    "sourceFiles": [
+      "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/src/tsserver/server.ts"
+    ],
+    "js": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 13,
+          "kind": "prologue",
+          "data": "use strict"
+        },
+        {
+          "pos": 14,
+          "end": 396,
+          "kind": "emitHelpers",
+          "data": "typescript:assign"
+        },
+        {
+          "pos": 397,
+          "end": 2187,
+          "kind": "emitHelpers",
+          "data": "typescript:generator"
+        },
+        {
+          "pos": 2188,
+          "end": 2416,
+          "kind": "emitHelpers",
+          "data": "typescript:makeTemplateObject"
+        },
+        {
+          "pos": 2417,
+          "end": 3002,
+          "kind": "emitHelpers",
+          "data": "typescript:extends"
+        },
+        {
+          "pos": 3003,
+          "end": 3410,
+          "kind": "emitHelpers",
+          "data": "typescript:rest"
+        },
+        {
+          "pos": 3411,
+          "end": 5427468,
+          "kind": "prepend",
+          "data": "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/built/local/compiler.js",
+          "texts": [
+            {
+              "pos": 3411,
+              "end": 5427468,
+              "kind": "text"
+            }
+          ]
+        },
+        {
+          "pos": 5427468,
+          "end": 7114584,
+          "kind": "prepend",
+          "data": "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/built/local/services.js",
+          "texts": [
+            {
+              "pos": 5427468,
+              "end": 7114584,
+              "kind": "text"
+            }
+          ]
+        },
+        {
+          "pos": 7114584,
+          "end": 7132733,
+          "kind": "prepend",
+          "data": "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/built/local/jsTyping.js",
+          "texts": [
+            {
+              "pos": 7114584,
+              "end": 7132733,
+              "kind": "text"
+            }
+          ]
+        },
+        {
+          "pos": 7132733,
+          "end": 7603173,
+          "kind": "prepend",
+          "data": "/home/cooper/NPMchecker/TypeScript/TypeScriptGit/built/local/server.js",
+          "texts": [
+            {
+              "pos": 7132733,
+              "end": 7603173,
+              "kind": "text"
+            }
+          ]
+        },
+        {
+          "pos": 7603173,
+          "end": 7644273,
+          "kind": "text"
+        }
+      ],
+      "sources": {
+        "prologues": [
+          {
+            "file": 0,
+            "text": "",
+            "directives": [
+              {
+                "pos": -1,
+                "end": -1,
+                "expression": {
+                  "pos": -1,
+                  "end": -1,
+                  "text": "use strict"
+                }
+              }
+            ]
+          }
+        ],
+        "helpers": [
+          "typescript:extends",
+          "typescript:assign"
+        ]
+      }
+    }
+  },
+  "version": "3.4.3"
+}
