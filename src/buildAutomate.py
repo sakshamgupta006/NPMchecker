@@ -4,9 +4,9 @@ import pprint
 import os
 
 #get the version from npm registry
-repoName = "lodash"
+repoName = "axios"
 repoName2 = "validator"
-githubUrl = "https://github.com/lodash/lodash.git"
+githubUrl = "https://github.com/axios/axios.git"
 testUrl = "https://registry.npmjs.org/" + repoName
 
 # Make the repo folders
@@ -14,6 +14,7 @@ os.system("mkdir " + repoName)
 
 # Make the github and npm folders
 os.system("mkdir " + repoName + "/" + repoName + "Git " + repoName + "/" + repoName + "NPM")
+os.system("mkdir " + repoName + "/" + repoName + "buitGit")
 
 #Clone into the github folder
 cloneCommand = "git clone " + githubUrl + " " + repoName + "/" + repoName + "Git"
@@ -31,7 +32,7 @@ with urllib.request.urlopen(testUrl) as url:
             # print (version)
             for index, value in enumerate(githubData):
                 # print (githubData[index]["name"])
-                if githubData[index]["name"] == version:
+                if githubData[index]["name"] == ("v" + version):
                     print (version, "Matched")
                     print ("Processing...")
                     #Checkout to that sha
@@ -46,6 +47,9 @@ with urllib.request.urlopen(testUrl) as url:
                     os.system("git add .")
                     os.system("git commit -m \"Buit the version\"")
 
+                    #Take the package folder out of the main github repo
+                    os.sytem("mkdir " + repoName + "/" + repoName + "builtGit/" + version)
+                    os.system("cp -r " + repoName + "/" + repoName + "Git/package " + repoName + "/" + repoName + "buitGit/" + version + "/")
 
                     #Download the npm registry repo as well
                     versionDir = "mkdir " + repoName + "/" + repoName + "NPM/" + version
