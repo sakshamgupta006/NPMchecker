@@ -55,7 +55,7 @@ with urllib.request.urlopen(testUrl) as url:
                     #Take the package folder out of the main github repo
                     os.system("mkdir " + repoName + "/" + repoName + "builtGit/" + version)
                     # CHANGE THE DIST FOLDER TO PACKAGE IF NECESSARY
-                    os.system("cp -r " + repoName + "/" + repoName + "Git/dist " + repoName + "/" + repoName + "buitGit/" + version + "/")
+                    os.system("cp -r " + repoName + "/" + repoName + "Git/dist " + repoName + "/" + repoName + "buitGit/" + version)
 
                     #Download the npm registry repo as well
                     versionDir = "mkdir " + repoName + "/" + repoName + "NPM/" + version
