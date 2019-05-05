@@ -5,7 +5,7 @@ import os
 
 #get the version from npm registry
 repoName = "winston"
-githubUrl = "https://github.com/axios/axios.git"
+githubUrl = "https://github.com/winstonjs/winston.git"
 testUrl = "https://registry.npmjs.org/" + repoName
 
 with urllib.request.urlopen(testUrl) as url:
