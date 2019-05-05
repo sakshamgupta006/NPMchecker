@@ -5,9 +5,9 @@ import os
 
 #get the version from npm registry
 repoName = "winston"
-
+owner = "winstonjs"
 # CHANGE THE GITHUB URL
-githubUrl = "https://github.com/axios/axios.git"
+githubUrl = "https://github.com/winstonjs/winston.git"
 
 testUrl = "https://registry.npmjs.org/" + repoName
 
@@ -26,7 +26,7 @@ with urllib.request.urlopen(testUrl) as url:
     npmReg = json.loads(url.read().decode())
 
     #CHANGE IF THE OWNER IS DIFFERENT
-    githubApi = "https://api.github.com/repos/" + repoName + "/" + repoName + "/tags"
+    githubApi = "https://api.github.com/repos/" + owner + "/" + repoName + "/tags"
 
     with urllib.request.urlopen(githubApi) as urlGithub:
         githubData = json.loads(urlGithub.read().decode())
