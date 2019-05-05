@@ -5,8 +5,10 @@ import os
 
 #get the version from npm registry
 repoName = "axios"
-repoName2 = "validator"
+
+# CHANGE THE GITHUB URL
 githubUrl = "https://github.com/axios/axios.git"
+
 testUrl = "https://registry.npmjs.org/" + repoName
 
 # Make the repo folders
@@ -22,7 +24,10 @@ os.system(cloneCommand)
 
 with urllib.request.urlopen(testUrl) as url:
     npmReg = json.loads(url.read().decode())
+
+    #CHANGE IF THE OWNER IS DIFFERENT
     githubApi = "https://api.github.com/repos/" + repoName + "/" + repoName + "/tags"
+
     with urllib.request.urlopen(githubApi) as urlGithub:
         githubData = json.loads(urlGithub.read().decode())
         # with open("lodashapi.json", "r") as read_file:
@@ -49,6 +54,7 @@ with urllib.request.urlopen(testUrl) as url:
 
                     #Take the package folder out of the main github repo
                     os.system("mkdir " + repoName + "/" + repoName + "builtGit/" + version)
+                    # CHANGE THE DIST FOLDER TO PACKAGE IF NECESSARY
                     os.system("cp -r " + repoName + "/" + repoName + "Git/dist " + repoName + "/" + repoName + "buitGit/" + version + "/")
 
                     #Download the npm registry repo as well
