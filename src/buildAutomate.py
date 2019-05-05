@@ -35,7 +35,7 @@ with urllib.request.urlopen(testUrl) as url:
                 if githubData[index]["name"] == ("v" + version):
                     print (version, "Matched")
                     print ("Processing...")
-                    #Checkout to that sha
+                    #Checkout to that sha   
                     currentSHA = githubData[index]["commit"]["sha"]
                     os.system("git -C " + repoName + "/" + repoName + "Git checkout " + currentSHA)
 
@@ -48,7 +48,7 @@ with urllib.request.urlopen(testUrl) as url:
                     os.system("git commit -m \"Buit the version\"")
 
                     #Take the package folder out of the main github repo
-                    os.sytem("mkdir " + repoName + "/" + repoName + "builtGit/" + version)
+                    os.system("mkdir " + repoName + "/" + repoName + "builtGit/" + version)
                     os.system("cp -r " + repoName + "/" + repoName + "Git/package " + repoName + "/" + repoName + "buitGit/" + version + "/")
 
                     #Download the npm registry repo as well
