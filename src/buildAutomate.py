@@ -16,7 +16,7 @@ os.system("mkdir " + repoName)
 
 # Make the github and npm folders
 os.system("mkdir " + repoName + "/" + repoName + "Git " + repoName + "/" + repoName + "NPM")
-os.system("mkdir " + repoName + "/" + repoName + "buitGit")
+os.system("mkdir " + repoName + "/" + repoName + "builtGit")
 
 #Clone into the github folder
 cloneCommand = "git clone " + githubUrl + " " + repoName + "/" + repoName + "Git"
@@ -74,3 +74,5 @@ with urllib.request.urlopen(testUrl) as url:
                     os.system("rm -rf " + repoName + "/" + repoName + "NPM/" + version + ".tgz")
 
                     print ("Tar Extraction Completed -> ", version)
+
+os.system("rm -rdf " + repoName + "/" + repoName + "Git")
