@@ -37,7 +37,7 @@ with urllib.request.urlopen(testUrl) as url:
             # print (version)
             for index, value in enumerate(githubData):
                 # print (githubData[index]["name"])
-                if githubData[index]["name"] == ("v" + version):
+                if githubData[index]["name"] == (("v" + version):
                     print (version, "Matched")
                     print ("Processing...")
                     #Checkout to that sha
