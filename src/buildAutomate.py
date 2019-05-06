@@ -2,13 +2,45 @@ import urllib.request
 import json
 import pprint
 import os
+from bs4 import BeautifulSoup
+import re
+
+# Function to extract score from comment
+def extractStringBetweenTwoCharacters(line, nameStart, nameEnd):
+    if line.find("score") != -1:
+        substr = (line.split(nameStart))[1].split(nameEnd)[0]
+        return substr
+    return -1
+
+def createScoreHash(scoreList):
+    scoreHash = {}
+    count = 1
+    total = 0
+
+    for score in scoreList:
+        scoreHash[count] = int(score)
+        total += int(score)
+        count += 1
+
+    if count == 1:
+        return scoreHash, 0, 0
+
+    count -= 1
+    average = total/count
+    scoreHash['differentFileCount'] = count
+    scoreHash['averageScore'] = average
+
+    return scoreHash, count, average
+
 
 #get the version from npm registry
-packName = "es6-promisify"
+packName = "axios"
 repoName = ""
 owner = ""
 githubUrl = ""
 testUrl = ""
+finalScore = 0
+finalCount = 0
 #get owner and package from previously populated URl
 with open("assets/npmGithubUrl.json", "r") as read_file:
     npmGit = json.load(read_file)
@@ -35,10 +67,13 @@ os.system("mkdir " + repoName)
 # Make the github and npm folders
 os.system("mkdir " + repoName + "/" + repoName + "Git " + repoName + "/" + repoName + "NPM")
 os.system("mkdir " + repoName + "/" + repoName + "builtGit")
+os.system("mkdir " + repoName + "/" + repoName + "diffOut")
 
 #Clone into the github folder
 cloneCommand = "git clone " + githubUrl + " " + repoName + "/" + repoName + "Git"
 os.system(cloneCommand)
+
+totalRepoCount = 0
 
 with urllib.request.urlopen(testUrl) as url:
     npmReg = json.loads(url.read().decode())
@@ -58,6 +93,7 @@ with urllib.request.urlopen(testUrl) as url:
                 if githubData[index]["name"] == (version) or githubData[index]["name"] == ("v" + version):
                     print (version, "Matched")
                     print ("Processing...")
+                    totalRepoCount += 1
                     #Checkout to that sha
                     currentSHA = githubData[index]["commit"]["sha"]
                     os.system("git -C " + repoName + "/" + repoName + "Git checkout " + currentSHA)
@@ -77,6 +113,12 @@ with urllib.request.urlopen(testUrl) as url:
                     os.system("cp -r " + repoName + "/" + repoName + "Git/lib " + repoName + "/" + repoName + "builtGit/" + version)
                     os.system("cp -r " + repoName + "/" + repoName + "Git/built " + repoName + "/" + repoName + "builtGit/" + version)
 
+                    #Make tar of the version
+                    os.system("tar -czvf " + repoName + "/" + repoName + "builtGit/" + version + ".tgz -C " + repoName + "/" + repoName + "builtGit/" + version + " .")
+
+                    #Delete the main builtGit
+                    os.system("rm -rdf " + repoName + "/" + repoName + "builtGit/" + version)
+
                     #Download the npm registry repo as well
                     versionDir = "mkdir " + repoName + "/" + repoName + "NPM/" + version
                     os.system(versionDir)
@@ -86,13 +128,46 @@ with urllib.request.urlopen(testUrl) as url:
                     downloadTar = "wget -O " + repoName + "/" + repoName + "NPM/" + version + ".tgz " + tarUrl
                     os.system(downloadTar)
 
+                    # Run trydiffoscope on the
+                    os.system("mkdir " + repoName + "/" + repoName + "diffOut/" + version)
+                    os.system("trydiffoscope --html " + repoName + "/" + repoName + "diffOut/" + version + "/" + repoName + "_" + version + ".html "
+                    + repoName + "/" + repoName + "builtGit/" + version + ".tgz " + repoName + "/" + repoName + "NPM/" + version + ".tgz")
+
+                    #Find the score of the differences
+                    htmlUrl = repoName + "/" + repoName + "diffOut/" + version + "/" + repoName + "_" + version + ".html"
+                    page = open(htmlUrl)
+                    soup = BeautifulSoup(page.read(), "lxml")
+
+                    # Find all comments in the html file
+                    comments = soup.find_all('div', {'class':'comment'})
+                    scores = []
+
+                    for comment in comments:
+                        #print (comment)
+                        score = extractStringBetweenTwoCharacters(str(comment), '(score: ', ',')
+                        if score != -1:
+                            scores.append(score)
+
+                    diffScoreJson, currentCount, currentScore = createScoreHash(scores)
+                    finalCount += currentCount
+                    finalScore += currentScore
+                    jsonSavePath = repoName + "/" + repoName + "diffOut/" + version + "/" + repoName + "_" + version + ".json"
+                    with open(jsonSavePath, 'w') as outfile:
+                        json.dump(diffScoreJson, outfile)
+
+
                     #Extract tar
-                    ExtractTar = "tar xvzf " + repoName + "/" + repoName + "NPM/" + version + ".tgz" + " -C " + repoName + "/" + repoName + "NPM/" + version + "/"
-                    os.system(ExtractTar)
-
-                    #Delete the tar
-                    os.system("rm -rf " + repoName + "/" + repoName + "NPM/" + version + ".tgz")
-
-                    print ("Tar Extraction Completed -> ", version)
+                    # ExtractTar = "tar xvzf " + repoName + "/" + repoName + "NPM/" + version + ".tgz" + " -C " + repoName + "/" + repoName + "NPM/" + version + "/"
+                    # os.system(ExtractTar)
+                    #
+                    # #Delete the tar
+                    # os.system("rm -rf " + repoName + "/" + repoName + "NPM/" + version + ".tgz")
+                    #
+                    # print ("Tar Extraction Completed -> ", version)
 
 os.system("rm -rdf " + repoName + "/" + repoName + "Git")
+print ("Final Count --->>>> ", finalCount)
+print ("Final Score --->>>> ", finalScore)
+if totalRepoCount != 0:
+    print ("Final Score Avg --->>> ", finalScore/totalRepoCount)
+print("Total Repo Count --->>> ", totalRepoCount)
