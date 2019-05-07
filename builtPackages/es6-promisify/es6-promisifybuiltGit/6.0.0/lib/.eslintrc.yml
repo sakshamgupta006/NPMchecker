@@ -1,5 +1,0 @@
-parserOptions:
-    sourceType: module
-
-env:
-    commonjs: false
