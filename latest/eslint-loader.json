@@ -1,0 +1,1 @@
+{"latest": {"webpack": "4.30.0", "prettier": "1.17.0", "pretty-quick": "1.10.0", "eslint-config-i-am-meticulous": "11.0.0", "npmpub": "4.1.0", "mkdirp": "0.5.1", "eslint": "5.16.0", "count": 7}, "old": {"eslint-friendly-formatter": "2.0.4", "ava": "0.17.0", "count": 3, "husky": "0.14.3"}, "package": "eslint-loader"}

@@ -1,0 +1,1 @@
+{"latest": {"npm-prepublish": "1.2.3", "jshint": "2.10.2", "count": 3, "lintspaces-cli": "0.7.1"}, "old": {"chai": "1.10.0", "mocha": "2.1.0", "count": 4, "es6-promise": "2.0.1", "nock": "0.56.0"}, "package": "isomorphic-fetch"}

@@ -1,0 +1,1 @@
+{"latest": {"chai": "4.2.0", "jshint": "2.10.2", "mocha": "6.1.4", "upath": "1.1.2", "sinon-chai": "3.3.0", "nyc": "14.1.0", "sinon": "7.3.2", "count": 9, "rimraf": "2.6.3", "coveralls": "3.0.3"}, "old": {"dtslint": "0.4.1", "@types/node": "11.13.4", "count": 2}, "package": "chokidar"}

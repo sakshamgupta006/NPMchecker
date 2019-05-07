@@ -1,0 +1,1 @@
+{"latest": {"@webpack-utilities/test": "1.0.0-alpha.0", "webpack": "4.30.0", "jsdoc-to-markdown": "4.0.1", "count": 4, "postcss-js": "2.0.1"}, "old": {"standard-version": "4.0.0", "postcss-import": "11.0.0", "jest": "23.0.0", "sugarss": "1.0.0", "standard": "11.0.0", "count": 5}, "package": "postcss-loader"}

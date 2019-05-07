@@ -1,0 +1,1 @@
+{"latest": {"yauzl": "2.10.0", "chai": "4.2.0", "jsdoc": "3.6.1", "rimraf": "2.6.3", "mocha": "6.1.4", "tar": "4.4.8", "count": 9, "stream-bench": "0.1.2", "archiver-jsdoc-theme": "1.1.0", "mkdirp": "0.5.1"}, "old": {"count": 0}, "package": "archiver"}

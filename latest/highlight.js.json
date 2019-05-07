@@ -1,0 +1,1 @@
+{"latest": {"mocha": "6.1.4", "glob": "7.1.3", "js-beautify": "1.10.0", "commander": "2.20.0", "tiny-worker": "2.2.0", "jsdom": "15.0.0", "del": "4.1.1", "bluebird": "3.5.4", "lodash": "4.17.11", "count": 10, "should": "13.2.3"}, "old": {"gear-lib": "github:highlightjs/gear-lib", "count": 2, "gear": "github:highlightjs/gear"}, "package": "highlight.js"}

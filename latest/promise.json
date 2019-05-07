@@ -1,0 +1,1 @@
+{"latest": {"istanbul": "0.4.5", "rimraf": "2.6.3", "count": 2}, "old": {"better-assert": "*", "mocha": "*", "count": 4, "acorn": "1.0.1", "promises-aplus-tests": "*"}, "package": "promise"}

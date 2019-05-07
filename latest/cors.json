@@ -1,0 +1,1 @@
+{"latest": {"supertest": "4.0.2", "after": "0.8.2", "count": 3, "express": "4.16.4"}, "old": {"eslint": "3.19.0", "nyc": "13.1.0", "mocha": "6.0.2", "count": 3}, "package": "cors"}

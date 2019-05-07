@@ -1,0 +1,1 @@
+{"latest": {"xtend": "4.0.1", "count": 2, "commander": "2.20.0"}, "old": {"readable-stream": "2.1.4", "node-gyp": "3.6.2", "glob": "5.0.14", "request": "=2.81.0", "tap": "0.7.1", "count": 6, "bindings": "1.2.1"}, "package": "nan"}

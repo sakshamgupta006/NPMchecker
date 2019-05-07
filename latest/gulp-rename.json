@@ -1,0 +1,1 @@
+{"latest": {"gulp": "4.0.2", "vinyl": "2.2.0", "gulp-sourcemaps": "2.6.5", "jscs": "3.0.7", "jshint": "2.10.2", "count": 7, "map-stream": "0.0.7", "should": "13.2.3"}, "old": {"mocha": "5.0.0", "count": 1}, "package": "gulp-rename"}

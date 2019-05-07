@@ -1,0 +1,1 @@
+{"latest": {"extract-text-webpack-plugin": "3.0.2", "rimraf": "2.6.3", "style-loader": "0.23.1", "react": "16.8.6", "memory-fs": "0.4.1", "codecov": "3.3.0", "count": 6}, "old": {"css-loader": "1.0.0", "svgr": "1.9.2", "jest": "23.5.0", "file-loader": "2.0.0", "webpack": "3.12.0", "count": 5}, "package": "webpack-manifest-plugin"}

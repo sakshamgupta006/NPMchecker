@@ -1,0 +1,1 @@
+{"latest": {"supertest": "4.0.2", "mocha": "6.1.4", "express": "4.16.4", "count": 6, "cookie-parser": "1.4.4", "eslint-plugin-markdown": "1.0.0", "after": "0.8.2"}, "old": {"eslint": "3.19.0", "nyc": "14.0.0", "count": 2}, "package": "express-session"}

@@ -1,0 +1,1 @@
+{"latest": {"execa": "1.0.0", "@sindresorhus/tsconfig": "0.3.0", "ava": "1.4.1", "count": 10, "tsd": "0.7.2", "coveralls": "3.0.3", "import-fresh": "3.0.0", "nyc": "14.1.0", "xo": "0.24.0", "matcha": "0.7.0", "resolve-from": "5.0.0"}, "old": {"count": 0}, "package": "chalk"}

@@ -1,0 +1,1 @@
+{"latest": {"coveralls": "3.0.3", "count": 1}, "old": {"docco": ">=0.6.2", "zap": ">=0.2.9", "coffee-script": ">=1.10.0", "nyc": ">=2.2.1", "count": 5, "diff": ">=1.0.8"}, "package": "xml2js"}

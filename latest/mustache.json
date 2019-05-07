@@ -1,0 +1,1 @@
+{"latest": {"uglify-js": "3.5.11", "zuul": "3.12.0", "jshint": "2.10.2", "count": 3}, "old": {"eslint": "2.5.1", "chai": "3.4.0", "zuul-ngrok": "nolanlawson/zuul-ngrok#patch-1", "mocha": "3.0.2", "count": 4}, "package": "mustache"}

@@ -1,0 +1,1 @@
+{"latest": {"glob-stream": "6.1.0", "rimraf": "2.6.3", "ava": "1.4.1", "matcha": "0.7.0", "tsd": "0.7.2", "xo": "0.24.0", "count": 6}, "old": {"globby": "sindresorhus/globby#master", "count": 1}, "package": "globby"}

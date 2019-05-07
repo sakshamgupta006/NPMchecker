@@ -1,0 +1,1 @@
+{"latest": {"delay": "4.2.0", "ava": "1.4.1", "coveralls": "3.0.3", "is-running": "2.1.0", "tsd": "0.7.2", "xo": "0.24.0", "count": 6}, "old": {"tempfile": "2.0.0", "nyc": "13.3.0", "cat-names": "2.0.0", "@types/node": "11.12.2", "count": 4}, "package": "execa"}

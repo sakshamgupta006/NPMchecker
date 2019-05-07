@@ -1,0 +1,1 @@
+{"latest": {"properties": "1.2.1", "js-yaml": "3.13.1", "underscore": "1.9.1", "count": 3}, "old": {"ts-node": "3.3.0", "cson": "3.0.1", "semver": "5.3.0", "typescript": "2.4.2", "@types/node": "7.0.8", "x2js": "2.0.1", "count": 10, "coffeescript": "2.2.4", "hjson": "1.2.0", "vows": ">=0.8.1", "toml": "2.0.6"}, "package": "config"}

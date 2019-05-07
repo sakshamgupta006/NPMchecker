@@ -1,0 +1,1 @@
+{"latest": {"strip-ansi": "5.2.0", "ava": "1.4.1", "clear-module": "3.2.0", "count": 6, "fixture-stdout": "0.2.1", "xo": "0.24.0", "mock-require": "3.0.3"}, "old": {"count": 0}, "package": "update-notifier"}

@@ -1,0 +1,1 @@
+{"latest": {"intercept-stdout": "0.1.2", "metrics": "0.1.21", "win-spawn": "2.0.0", "bluebird": "3.5.4", "count": 4}, "old": {"tcp-port-used": "0.1.2", "coveralls": "2.11.2", "uuid": "2.0.1", "mocha": "3.1.2", "eslint": "4.2.0", "nyc": "10.0.0", "count": 6}, "package": "redis"}

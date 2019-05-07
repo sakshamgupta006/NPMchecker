@@ -1,0 +1,1 @@
+{"latest": {"expect.js": "0.3.1", "count": 1}, "old": {"supertest": "1.0.1", "mocha": "2.0.1", "jsdoc-to-markdown": "1.1.1", "koa": "2.2.0", "count": 5, "should": "6.0.3"}, "package": "koa-router"}

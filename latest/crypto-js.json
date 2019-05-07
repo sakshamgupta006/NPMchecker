@@ -1,0 +1,1 @@
+{"latest": {"count": 3, "lodash": "4.17.11", "grunt-update-json": "0.2.2", "grunt-jsonlint": "1.1.0"}, "old": {"grunt": "0.4.5", "grunt-contrib-jshint": "0.10.0", "fmd": "0.0.3", "grunt-contrib-copy": "0.6.0", "grunt-contrib-clean": "0.6.0", "count": 6, "load-grunt-config": "0.16.0"}, "package": "crypto-js"}

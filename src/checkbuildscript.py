@@ -10,6 +10,7 @@ repos_with_build = 0
 repos_with_no_build = 0
 repos_not_cloned = 0
 packages_with_build = []
+packages_with_no_package = []
 with open(githubUrl, "r") as read_file:
     data = json.load(read_file)
     for index, repo in enumerate(data):
@@ -42,9 +43,11 @@ with open(githubUrl, "r") as read_file:
                         else:
                             repos_with_build += 1
                             packages_with_build.append(data[index]["packageName"])
-                            print (packages_with_build)
+                            # print (packages_with_build)
             else:
                 repos_not_cloned += 1
+                packages_with_no_package.append(data[index]["packageName"])
+                print (packages_with_no_package)
 
             #Remove the downloaded directory
             os.system("rm -rfd " + currentDirectory)
