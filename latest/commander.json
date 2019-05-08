@@ -1,1 +1,16 @@
-{"latest": {"eslint": "5.16.0", "standard": "12.0.1", "count": 3, "should": "13.2.3"}, "old": {"ts-node": "7.0.1", "sinon": "6.3.4", "@types/node": "10.11.3", "typescript": "2.9.2", "count": 4}, "package": "commander"}
+{
+  "latest": {
+    "eslint": "5.16.0",
+    "standard": "12.0.1",
+    "count": 3,
+    "should": "13.2.3"
+  },
+  "old": {
+    "ts-node": "7.0.1",
+    "sinon": "6.3.4",
+    "@types/node": "10.11.3",
+    "typescript": "2.9.2",
+    "count": 4
+  },
+  "package": "commander"
+}

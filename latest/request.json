@@ -1,1 +1,29 @@
-{"latest": {"function-bind": "1.1.1", "rimraf": "2.6.3", "buffer-equal": "1.0.0", "karma-coverage": "1.1.2", "taper": "0.5.0", "server-destroy": "1.0.1", "istanbul": "0.4.5", "tape": "4.10.1", "count": 13, "coveralls": "3.0.3", "karma-phantomjs-launcher": "1.0.4", "bluebird": "3.5.4", "codecov": "3.3.0", "phantomjs-prebuilt": "2.1.16"}, "old": {"karma-browserify": "5.0.1", "standard": "9.0.0", "browserify-istanbul": "2.0.0", "karma-cli": "1.0.0", "karma-tap": "3.0.1", "karma": "3.0.0", "count": 7, "browserify": "13.0.1"}, "package": "request"}
+{
+  "latest": {
+    "function-bind": "1.1.1",
+    "rimraf": "2.6.3",
+    "buffer-equal": "1.0.0",
+    "karma-coverage": "1.1.2",
+    "taper": "0.5.0",
+    "server-destroy": "1.0.1",
+    "istanbul": "0.4.5",
+    "tape": "4.10.1",
+    "count": 13,
+    "coveralls": "3.0.3",
+    "karma-phantomjs-launcher": "1.0.4",
+    "bluebird": "3.5.4",
+    "codecov": "3.3.0",
+    "phantomjs-prebuilt": "2.1.16"
+  },
+  "old": {
+    "karma-browserify": "5.0.1",
+    "standard": "9.0.0",
+    "browserify-istanbul": "2.0.0",
+    "karma-cli": "1.0.0",
+    "karma-tap": "3.0.1",
+    "karma": "3.0.0",
+    "count": 7,
+    "browserify": "13.0.1"
+  },
+  "package": "request"
+}
