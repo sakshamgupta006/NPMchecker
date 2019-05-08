@@ -1,0 +1,3767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="referrer" content="no-referrer" />
+  <meta name="generator" content="diffoscope" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADdgAAA3YBfdWCzAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAM8SURBVFiF7dZdaJZlGAfw3/O+e9XNjy3XllZzWImBxIpifqTgsmUHBSIeBNFBdRh0UHQ0xGdb66CFBIERZEFRQRRUw0HkQkLMYQSBdpCFWdgSP6jpNn2393k68Nn2bj3vXtb6UOh/cl/39b/u67mem/913zf/4z9GUDw5xNI8n5WIzW9m/QF2YluJmI8203mALzEvLWAerRs4Pz6vSIkZSlsYk0/GkaB0zEgyDgWMlijyWsJuS2fkQwu8pqpMTA0ypeiShG71Bp0rU8Q+A47MWEDgvHZbZl/Av4SpIgxVYB3IqwZDmoUuYkzosDaNchpAoFqkSmgjGPWzLieF1k3JHVsjvCJQHBYaSy9g1E3m+QImQiK9SbNGqJDzuiDZ0lggQJCsyelDq8BB47sbCWTsnvhG3kqcLL833eqF4hk1EOoTOjZjnnaRdq2l6KtMAyl4/g23bKJrun+Mt9uOq7nvqOVbebWYy9Adc1fM/R/3CO780dONbIeFPHsPw+ULeM5ZHTbXHfUtXpxOZzgT5z02UGsZThRzF/ilht9G+fr4zfbfccIxXIa7uVTup69i7LJXaEEqF3on1d9ludBLpVLOVoT1lky9QYtwQ6p3WAVqSyUslWwSbRrkPJrMtgn0iBVk7BPJ4sGE24EPQKW3jLgdzWKLBTbg0yTuZeGkDsp2gcUGDesHGQ/gK5G8nLMigWiCe3jCrnTRiJ9EYjm1ImsUEq5l8hScPXbpsVtlKhfan+pv0yD0ZqmU5XegGBmnDIo/pylj8oYLOP3Eab/v5Zmi6EtZ3vv1FU/2r7LioYSL2dNybbdiMdptFU57++20Vqh+iq/Tap1WpaWY611wmyWyUzxZDbIWTvEV1Ildn5agfBumoUMTtoisFvhebAAHZWxX0ChwTuScvHdVeVykToysMyJ7ittwbmj31J+6IrRDp5XTfBt1WJ+WYnZdMB0F3xlUgD5uDVj2Sa+a4SrzH+FeyHHmw17V112waBOZgP4WczkLZsILar1fpIliMU4XZoK/poE0XHl+N8v6QcGAUbVymnDIZVnzrTXqGzmnhKLxZX/niyiDjIJgwg4Se1GR/Y8idGPysh6fr0i1i/AHMWHgrwUJgNAAAAAASUVORK5CYII=" />
+  <title>/usr/bin/diffoscope --status-fd=2 --html output.html --text output.txt --profile=- a/3.1.0.tgz b/3.1.0.tgz</title>
+<style>
+body.diffoscope {
+  background: white;
+  color: black;
+}
+.diffoscope .footer {
+  font-size: small;
+}
+.diffoscope .difference {
+  border: outset #888 1px;
+  background: #E8E8E8;
+  background: rgba(0,0,0,.1);
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+.diffoscope .difference table {
+  table-layout: fixed;
+  width: 100%;
+  border: 0;
+}
+.diffoscope .difference th,
+.diffoscope .difference td {
+  border: 0;
+}
+.diffoscope table.diff {
+  border: 0;
+  border-collapse:collapse;
+  font-size:0.75em;
+  font-family: 'Lucida Console', monospace;
+}
+.diffoscope table.diff tr:hover td {
+  background: #FFFF00;
+}
+.diffoscope .line {
+  color:#8080a0
+}
+.diffoscope th {
+  background: black;
+  color: white
+}
+.diffoscope .diffunmodified td {
+  background: #D0D0E0
+}
+.diffoscope .diffhunk td {
+  background: #A0A0A0
+}
+.diffoscope .diffadded td {
+  background: #CCFFCC
+}
+.diffoscope .diffdeleted td {
+  background: #FFCCCC
+}
+.diffoscope .diffchanged td {
+  background: #FFFFA0
+}
+.diffoscope ins, del {
+  background: #E0C880;
+  text-decoration: none
+}
+.diffoscope .diffponct {
+  color: #B08080
+}
+.diffoscope .comment {
+  font-style: italic;
+}
+.diffoscope .source {
+  font-weight: bold;
+}
+.diffoscope .error {
+  border: solid black 1px;
+  background: red;
+  color: white;
+  padding: 0.2em;
+}
+.diffoscope .anchor {
+  margin-left: 0.5em;
+  font-size: 80%;
+  color: #333;
+  text-decoration: none;
+  display: none;
+}
+.diffoscope .diffheader:hover .anchor {
+  display: inline;
+}
+.diffoscope .diffcontrol, .diffoscope .diffcontrol-nochildren {
+  float: left;
+  margin-right: 0.3em;
+  cursor: pointer;
+  display: none; /* currently, only available in html-dir output where jquery is enabled */
+}
+.diffoscope .colines {
+  width: 3em;
+}
+.diffoscope .coldiff {
+  width: 99%;
+}
+.diffoscope .diffsize {
+  float: right;
+}
+</style>
+</head>
+<body class="diffoscope">
+<div class="difference">
+  <div class="diffheader">
+  <div class="diffcontrol diffcontrol-double">⊟</div>
+  <div><span class="diffsize">351 KB</span></div>
+  <div><span class="source">a/3.1.0.tgz</span> vs.</div>
+  <div ><span class="source">b/3.1.0.tgz</span>
+    <a class="anchor" href="#">¶</a>
+  </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol">⊟</div>
+    <div><span class="diffsize">208 B</span></div>
+    <div id="filetype-from-file---"><span class="source">filetype from file(1)</span>
+      <a class="anchor" href="#filetype-from-file---">¶</a>
+    </div>
+    </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 1 lines modified</td><td colspan="2">Offset 1, 1 lines modified</td></tr>
+<tr class="diffchanged"><td class="diffline">1 </td><td class="diffpresent">gzip<span class="diffponct">·</span>​compressed<span class="diffponct">·</span>​data,​<span class="diffponct">·</span>​<del>last<span class="diffponct">·</span>​modified:​<span class="diffponct">·</span>​Wed<span class="diffponct">·</span>​May<span class="diffponct">·</span>​<span class="diffponct">·</span>​8<span class="diffponct">·</span>​05:​46:​16<span class="diffponct">·</span>​2019,​<span class="diffponct">·</span>​</del>from<span class="diffponct">·</span>​Unix,​<span class="diffponct">·</span>​original<span class="diffponct">·</span>​size<span class="diffponct">·</span>​2<del>324480</del></td><td class="diffline">1 </td><td class="diffpresent">gzip<span class="diffponct">·</span>​compressed<span class="diffponct">·</span>​data,​<span class="diffponct">·</span>​from<span class="diffponct">·</span>​Unix,​<span class="diffponct">·</span>​original<span class="diffponct">·</span>​size<span class="diffponct">·</span>​<ins>7</ins>2<ins>419328</ins></td></tr>
+</table>  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol">⊟</div>
+    <div><span class="diffsize">351 KB</span></div>
+    <div id="D.-.-.tgz-content"><span class="source">3.1.0.tgz-content</span>
+      <a class="anchor" href="#D.-.-.tgz-content">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">319 KB</span></div>
+      <div id="D.-.-.tgz-content---file-list"><span class="source">file list</span>
+        <a class="anchor" href="#D.-.-.tgz-content---file-list">¶</a>
+      </div>
+      </div>
+<div class="error">Max report size reached</div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">98.0 B</span></div>
+      <div id="D.-.-.tgz-content---filetype-from-file---"><span class="source">filetype from file(1)</span>
+        <a class="anchor" href="#D.-.-.tgz-content---filetype-from-file---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 1 lines modified</td><td colspan="2">Offset 1, 1 lines modified</td></tr>
+<tr class="diffchanged"><td class="diffline">1 </td><td class="diffpresent">POSIX<span class="diffponct">·</span>​tar<span class="diffponct">·</span>​archive<del><span class="diffponct">·</span>​(GNU)​</del></td><td class="diffline">1 </td><td class="diffpresent">POSIX<span class="diffponct">·</span>​tar<span class="diffponct">·</span>​archive</td></tr>
+</table>    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">71.0 B</span></div>
+      <div><span class="source">./lib/fake.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-fake.js"><span class="source">package/lib/fake.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-fake.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">71.0 B</span></div>
+      <div><span class="source">./lib/name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-name.js"><span class="source">package/lib/name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">77.0 B</span></div>
+      <div><span class="source">./lib/locales.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales.js"><span class="source">package/lib/locales.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">79.0 B</span></div>
+      <div><span class="source">./lib/internet.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-internet.js"><span class="source">package/lib/internet.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-internet.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">77.0 B</span></div>
+      <div><span class="source">./lib/address.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-address.js"><span class="source">package/lib/address.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-address.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">77.0 B</span></div>
+      <div><span class="source">./lib/finance.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-finance.js"><span class="source">package/lib/finance.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-finance.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">75.0 B</span></div>
+      <div><span class="source">./lib/hacker.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-hacker.js"><span class="source">package/lib/hacker.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-hacker.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/de_AT/address/street_root.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_AT-address-street_root.js"><span class="source">package/lib/locales/de_AT/address/street_root.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_AT-address-street_root.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/de_AT/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_AT-address-city_name.js"><span class="source">package/lib/locales/de_AT/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_AT-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/de_AT/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_AT-address-index.js"><span class="source">package/lib/locales/de_AT/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_AT-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">118 B</span></div>
+      <div><span class="source">./lib/locales/de_AT/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_AT-address-country.js"><span class="source">package/lib/locales/de/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_AT-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">116 B</span></div>
+      <div><span class="source">./lib/locales/de_AT/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_AT-name-last_name.js"><span class="source">package/lib/locales/de/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_AT-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">118 B</span></div>
+      <div><span class="source">./lib/locales/de_AT/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_AT-name-first_name.js"><span class="source">package/lib/locales/de/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_AT-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/en_au_ocker/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_au_ocker-address-index.js"><span class="source">package/lib/locales/en_au_ocker/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_au_ocker-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">133 B</span></div>
+      <div><span class="source">./lib/locales/en_au_ocker/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_au_ocker-name-first_name.js"><span class="source">package/lib/locales/en_au_ocker/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_au_ocker-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/en_GB/address/county.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_GB-address-county.js"><span class="source">package/lib/locales/en_GB/address/county.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_GB-address-county.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/en/address/street_suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-address-street_suffix.js"><span class="source">package/lib/locales/en/address/street_suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-address-street_suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/en/address/time_zone.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-address-time_zone.js"><span class="source">package/lib/locales/en/address/time_zone.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-address-time_zone.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/en/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-address-index.js"><span class="source">package/lib/locales/en/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/en/address/country_code.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-address-country_code.js"><span class="source">package/lib/locales/en/address/country_code.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-address-country_code.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/en/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-address-country.js"><span class="source">package/lib/locales/en/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/en/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-address-state.js"><span class="source">package/lib/locales/en/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/en/system/mimeTypes.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-system-mimeTypes.js"><span class="source">package/lib/locales/en/system/mimeTypes.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-system-mimeTypes.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/en/finance/currency.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-finance-currency.js"><span class="source">package/lib/locales/en/finance/currency.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-finance-currency.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">101 B</span></div>
+      <div><span class="source">./lib/locales/en/app/name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-app-name.js"><span class="source">package/lib/locales/en/app/name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-app-name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/en/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-company-noun.js"><span class="source">package/lib/locales/en/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/en/company/bs_noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-company-bs_noun.js"><span class="source">package/lib/locales/en/company/bs_noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-company-bs_noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/en/company/bs_adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-company-bs_adjective.js"><span class="source">package/lib/locales/en/company/bs_adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-company-bs_adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/en/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-company-descriptor.js"><span class="source">package/lib/locales/en/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/en/company/bs_verb.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-company-bs_verb.js"><span class="source">package/lib/locales/en/company/bs_verb.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-company-bs_verb.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/en/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-company-adjective.js"><span class="source">package/lib/locales/en/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/en/team/creature.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-team-creature.js"><span class="source">package/lib/locales/en/team/creature.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-team-creature.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/en/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-lorem-words.js"><span class="source">package/lib/locales/de/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/en/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-lorem-supplemental.js"><span class="source">package/lib/locales/el/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/en/commerce/product_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-commerce-product_name.js"><span class="source">package/lib/locales/en/commerce/product_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-commerce-product_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/en/internet/avatar_uri.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-internet-avatar_uri.js"><span class="source">package/lib/locales/el/internet/avatar_uri.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-internet-avatar_uri.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">95.0 B</span></div>
+      <div><span class="source">./lib/locales/en/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-index.js"><span class="source">package/lib/locales/en/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/en/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-name-last_name.js"><span class="source">package/lib/locales/en/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/en/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-name-title.js"><span class="source">package/lib/locales/en/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/en/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-name-first_name.js"><span class="source">package/lib/locales/en/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/en/date/weekday.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-date-weekday.js"><span class="source">package/lib/locales/en/date/weekday.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-date-weekday.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/en/date/month.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en-date-month.js"><span class="source">package/lib/locales/en/date/month.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en-date-month.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/de/address/street_root.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de-address-street_root.js"><span class="source">package/lib/locales/de/address/street_root.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de-address-street_root.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/de/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de-address-index.js"><span class="source">package/lib/locales/de/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">118 B</span></div>
+      <div><span class="source">./lib/locales/de/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de-address-country.js"><span class="source">package/lib/locales/de_AT/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/de/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de-lorem-words.js"><span class="source">package/lib/locales/el/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">116 B</span></div>
+      <div><span class="source">./lib/locales/de/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de-name-last_name.js"><span class="source">package/lib/locales/de_AT/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">118 B</span></div>
+      <div><span class="source">./lib/locales/de/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de-name-first_name.js"><span class="source">package/lib/locales/de_AT/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/ge/address/street_title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-address-street_title.js"><span class="source">package/lib/locales/ge/address/street_title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-address-street_title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/ge/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-address-city_name.js"><span class="source">package/lib/locales/ge/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/ge/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-address-index.js"><span class="source">package/lib/locales/ge/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/ge/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-address-country.js"><span class="source">package/lib/locales/ge/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/ge/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-name-last_name.js"><span class="source">package/lib/locales/ge/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/ge/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-name-title.js"><span class="source">package/lib/locales/ge/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/ge/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ge-name-first_name.js"><span class="source">package/lib/locales/ge/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ge-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/tr/address/street_root.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-address-street_root.js"><span class="source">package/lib/locales/tr/address/street_root.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-address-street_root.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/tr/address/city.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-address-city.js"><span class="source">package/lib/locales/tr/address/city.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-address-city.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/tr/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-address-country.js"><span class="source">package/lib/locales/tr/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/tr/phone_number/area_code.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-phone_number-area_code.js"><span class="source">package/lib/locales/tr/phone_number/area_code.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-phone_number-area_code.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/tr/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-lorem-words.js"><span class="source">package/lib/locales/en/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/tr/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-name-last_name.js"><span class="source">package/lib/locales/tr/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/tr/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-tr-name-first_name.js"><span class="source">package/lib/locales/tr/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-tr-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/es/address/street_suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-address-street_suffix.js"><span class="source">package/lib/locales/es/address/street_suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-address-street_suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/es/address/time_zone.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-address-time_zone.js"><span class="source">package/lib/locales/es/address/time_zone.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-address-time_zone.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/es/address/city_prefix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-address-city_prefix.js"><span class="source">package/lib/locales/es/address/city_prefix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-address-city_prefix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/es/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-address-index.js"><span class="source">package/lib/locales/es/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/es/address/province.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-address-province.js"><span class="source">package/lib/locales/es/address/province.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-address-province.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/es/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-address-country.js"><span class="source">package/lib/locales/es/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/es/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-company-noun.js"><span class="source">package/lib/locales/es/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/es/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-company-descriptor.js"><span class="source">package/lib/locales/es/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/es/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-company-adjective.js"><span class="source">package/lib/locales/es/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/es/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-name-last_name.js"><span class="source">package/lib/locales/es/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/es/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-name-title.js"><span class="source">package/lib/locales/es/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/es/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es-name-first_name.js"><span class="source">package/lib/locales/es/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/uk/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-address-city_name.js"><span class="source">package/lib/locales/uk/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/uk/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-address-index.js"><span class="source">package/lib/locales/uk/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/uk/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-address-country.js"><span class="source">package/lib/locales/uk/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/uk/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-address-state.js"><span class="source">package/lib/locales/uk/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/uk/internet/domain_suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-internet-domain_suffix.js"><span class="source">package/lib/locales/uk/internet/domain_suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-internet-domain_suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/male_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-male_last_name.js"><span class="source">package/lib/locales/uk/name/male_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-male_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/female_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-female_last_name.js"><span class="source">package/lib/locales/uk/name/female_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-female_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/male_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-male_first_name.js"><span class="source">package/lib/locales/uk/name/male_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-male_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/male_middle_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-male_middle_name.js"><span class="source">package/lib/locales/uk/name/male_middle_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-male_middle_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/female_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-female_first_name.js"><span class="source">package/lib/locales/uk/name/female_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-female_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">131 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/female_middle_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-female_middle_name.js"><span class="source">package/lib/locales/uk/name/female_middle_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-female_middle_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-title.js"><span class="source">package/lib/locales/uk/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/uk/name/suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-uk-name-suffix.js"><span class="source">package/lib/locales/uk/name/suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-uk-name-suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/en_IND/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_IND-address-state.js"><span class="source">package/lib/locales/en_IND/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_IND-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/en_IND/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_IND-name-last_name.js"><span class="source">package/lib/locales/en_IND/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_IND-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/en_IND/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_IND-name-first_name.js"><span class="source">package/lib/locales/en_IND/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_IND-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/sv/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sv-address-index.js"><span class="source">package/lib/locales/sv/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sv-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/sv/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sv-address-country.js"><span class="source">package/lib/locales/sv/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sv-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/sv/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sv-name-title.js"><span class="source">package/lib/locales/pl/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sv-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/lv/address/street_title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-address-street_title.js"><span class="source">package/lib/locales/lv/address/street_title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-address-street_title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/lv/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-address-city_name.js"><span class="source">package/lib/locales/lv/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/lv/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-address-index.js"><span class="source">package/lib/locales/lv/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/lv/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-address-country.js"><span class="source">package/lib/locales/lv/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/lv/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-address-state.js"><span class="source">package/lib/locales/lv/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/lv/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-lorem-words.js"><span class="source">package/lib/locales/lv/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/lv/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-lorem-supplemental.js"><span class="source">package/lib/locales/lv/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/lv/commerce/product_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-commerce-product_name.js"><span class="source">package/lib/locales/lv/commerce/product_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-commerce-product_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">103 B</span></div>
+      <div><span class="source">./lib/locales/lv/name/name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-name-name.js"><span class="source">package/lib/locales/lv/name/name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-name-name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/lv/name/male_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-name-male_last_name.js"><span class="source">package/lib/locales/lv/name/male_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-name-male_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/lv/name/female_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-name-female_last_name.js"><span class="source">package/lib/locales/lv/name/female_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-name-female_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/lv/name/male_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-name-male_first_name.js"><span class="source">package/lib/locales/lv/name/male_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-name-male_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/lv/name/female_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-name-female_first_name.js"><span class="source">package/lib/locales/lv/name/female_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-name-female_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/lv/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-name-title.js"><span class="source">package/lib/locales/lv/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/lv/date/month.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-lv-date-month.js"><span class="source">package/lib/locales/lv/date/month.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-lv-date-month.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/vi/address/county.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-vi-address-county.js"><span class="source">package/lib/locales/vi/address/county.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-vi-address-county.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/vi/address/city_root.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-vi-address-city_root.js"><span class="source">package/lib/locales/vi/address/city_root.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-vi-address-city_root.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/vi/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-vi-lorem-words.js"><span class="source">package/lib/locales/vi/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-vi-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/vi/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-vi-name-last_name.js"><span class="source">package/lib/locales/vi/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-vi-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/ru/address/street_title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-address-street_title.js"><span class="source">package/lib/locales/ru/address/street_title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-address-street_title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/ru/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-address-city_name.js"><span class="source">package/lib/locales/ru/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/ru/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-address-index.js"><span class="source">package/lib/locales/ru/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/ru/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-address-country.js"><span class="source">package/lib/locales/ru/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/ru/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-address-state.js"><span class="source">package/lib/locales/ru/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/ru/commerce/product_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-commerce-product_name.js"><span class="source">package/lib/locales/ru/commerce/product_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-commerce-product_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/ru/commerce/color.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-commerce-color.js"><span class="source">package/lib/locales/ru/commerce/color.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-commerce-color.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/ru/name/male_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-name-male_last_name.js"><span class="source">package/lib/locales/ru/name/male_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-name-male_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/ru/name/female_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-name-female_last_name.js"><span class="source">package/lib/locales/ru/name/female_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-name-female_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/ru/name/male_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-name-male_first_name.js"><span class="source">package/lib/locales/ru/name/male_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-name-male_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/ru/name/male_middle_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-name-male_middle_name.js"><span class="source">package/lib/locales/ru/name/male_middle_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-name-male_middle_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/ru/name/female_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-name-female_first_name.js"><span class="source">package/lib/locales/ru/name/female_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-name-female_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">131 B</span></div>
+      <div><span class="source">./lib/locales/ru/name/female_middle_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-name-female_middle_name.js"><span class="source">package/lib/locales/ru/name/female_middle_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-name-female_middle_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/ru/date/weekday.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-date-weekday.js"><span class="source">package/lib/locales/ru/date/weekday.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-date-weekday.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/ru/date/month.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ru-date-month.js"><span class="source">package/lib/locales/ru/date/month.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ru-date-month.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/address/street.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-address-street.js"><span class="source">package/lib/locales/es_MX/address/street.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-address-street.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">133 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/address/street_suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-address-street_suffix.js"><span class="source">package/lib/locales/es_MX/address/street_suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-address-street_suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/address/time_zone.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-address-time_zone.js"><span class="source">package/lib/locales/es_MX/address/time_zone.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-address-time_zone.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/address/city_prefix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-address-city_prefix.js"><span class="source">package/lib/locales/es_MX/address/city_prefix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-address-city_prefix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-address-index.js"><span class="source">package/lib/locales/es_MX/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-address-country.js"><span class="source">package/lib/locales/es_MX/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-company-noun.js"><span class="source">package/lib/locales/es_MX/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/company/bs_noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-company-bs_noun.js"><span class="source">package/lib/locales/es_MX/company/bs_noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-company-bs_noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">131 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/company/bs_adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-company-bs_adjective.js"><span class="source">package/lib/locales/es_MX/company/bs_adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-company-bs_adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-company-descriptor.js"><span class="source">package/lib/locales/es_MX/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/company/bs_verb.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-company-bs_verb.js"><span class="source">package/lib/locales/es_MX/company/bs_verb.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-company-bs_verb.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-company-adjective.js"><span class="source">package/lib/locales/es_MX/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/team/creature.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-team-creature.js"><span class="source">package/lib/locales/es_MX/team/creature.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-team-creature.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-lorem-words.js"><span class="source">package/lib/locales/es_MX/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">124 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-lorem-supplemental.js"><span class="source">package/lib/locales/en/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">133 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/commerce/product_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-commerce-product_name.js"><span class="source">package/lib/locales/es_MX/commerce/product_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-commerce-product_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-name-last_name.js"><span class="source">package/lib/locales/es_MX/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-name-title.js"><span class="source">package/lib/locales/es_MX/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/es_MX/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-es_MX-name-first_name.js"><span class="source">package/lib/locales/es_MX/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-es_MX-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">133 B</span></div>
+      <div><span class="source">./lib/locales/nb_NO/address/street_suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nb_NO-address-street_suffix.js"><span class="source">package/lib/locales/nb_NO/address/street_suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nb_NO-address-street_suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/nb_NO/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nb_NO-address-index.js"><span class="source">package/lib/locales/nb_NO/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nb_NO-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/nb_NO/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nb_NO-name-last_name.js"><span class="source">package/lib/locales/nb_NO/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nb_NO-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/nb_NO/name/feminine_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nb_NO-name-feminine_name.js"><span class="source">package/lib/locales/nb_NO/name/feminine_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nb_NO-name-feminine_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/nb_NO/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nb_NO-name-first_name.js"><span class="source">package/lib/locales/nb_NO/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nb_NO-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/nb_NO/name/masculine_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nb_NO-name-masculine_name.js"><span class="source">package/lib/locales/nb_NO/name/masculine_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nb_NO-name-masculine_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">141 B</span></div>
+      <div><span class="source">./lib/locales/en_US/address/postcode_by_state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_US-address-postcode_by_state.js"><span class="source">package/lib/locales/en_US/address/postcode_by_state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_US-address-postcode_by_state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">139 B</span></div>
+      <div><span class="source">./lib/locales/en_US/phone_number/exchange_code.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_US-phone_number-exchange_code.js"><span class="source">package/lib/locales/en_US/phone_number/area_code.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_US-phone_number-exchange_code.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">139 B</span></div>
+      <div><span class="source">./lib/locales/en_US/phone_number/area_code.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_US-phone_number-area_code.js"><span class="source">package/lib/locales/en_US/phone_number/exchange_code.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_US-phone_number-area_code.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/zh_TW/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_TW-address-index.js"><span class="source">package/lib/locales/zh_CN/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_TW-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/zh_TW/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_TW-name-last_name.js"><span class="source">package/lib/locales/zh_TW/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_TW-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/zh_TW/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_TW-name-first_name.js"><span class="source">package/lib/locales/zh_TW/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_TW-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-address-city_name.js"><span class="source">package/lib/locales/id_ID/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-address-state.js"><span class="source">package/lib/locales/id_ID/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">131 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/phone_number/formats.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-phone_number-formats.js"><span class="source">package/lib/locales/id_ID/phone_number/formats.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-phone_number-formats.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/name/male_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-name-male_last_name.js"><span class="source">package/lib/locales/id_ID/name/male_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-name-male_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">133 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/name/female_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-name-female_last_name.js"><span class="source">package/lib/locales/id_ID/name/female_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-name-female_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">131 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/name/male_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-name-male_first_name.js"><span class="source">package/lib/locales/id_ID/name/male_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-name-male_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">135 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/name/female_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-name-female_first_name.js"><span class="source">package/lib/locales/id_ID/name/female_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-name-female_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/id_ID/date/month.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-id_ID-date-month.js"><span class="source">package/lib/locales/id_ID/date/month.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-id_ID-date-month.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/fa/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fa-name-last_name.js"><span class="source">package/lib/locales/fa/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fa-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/fa/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fa-name-first_name.js"><span class="source">package/lib/locales/fa/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fa-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/en_AU/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_AU-name-last_name.js"><span class="source">package/lib/locales/en_AU/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_AU-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/en_AU/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_AU-name-first_name.js"><span class="source">package/lib/locales/en_AU/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_AU-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/ja/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ja-address-state.js"><span class="source">package/lib/locales/ja/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ja-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/nl/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nl-address-index.js"><span class="source">package/lib/locales/nl/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nl-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/nl/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nl-address-country.js"><span class="source">package/lib/locales/nl/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nl-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/nl/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nl-lorem-words.js"><span class="source">package/lib/locales/fr/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nl-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">124 B</span></div>
+      <div><span class="source">./lib/locales/nl/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nl-lorem-supplemental.js"><span class="source">package/lib/locales/es_MX/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nl-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/nl/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nl-name-last_name.js"><span class="source">package/lib/locales/nl/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nl-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/nl/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nl-name-first_name.js"><span class="source">package/lib/locales/nl/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nl-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/fr/address/street_suffix.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-address-street_suffix.js"><span class="source">package/lib/locales/fr/address/street_suffix.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-address-street_suffix.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/fr/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-address-city_name.js"><span class="source">package/lib/locales/fr/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/fr/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-address-index.js"><span class="source">package/lib/locales/fr/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/fr/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-company-noun.js"><span class="source">package/lib/locales/fr/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/fr/company/bs_noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-company-bs_noun.js"><span class="source">package/lib/locales/fr/company/bs_noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-company-bs_noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/fr/company/bs_adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-company-bs_adjective.js"><span class="source">package/lib/locales/fr/company/bs_adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-company-bs_adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/fr/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-company-descriptor.js"><span class="source">package/lib/locales/fr/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/fr/company/bs_verb.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-company-bs_verb.js"><span class="source">package/lib/locales/fr/company/bs_verb.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-company-bs_verb.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/fr/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-company-adjective.js"><span class="source">package/lib/locales/fr/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/fr/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-lorem-words.js"><span class="source">package/lib/locales/nl/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/fr/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-lorem-supplemental.js"><span class="source">package/lib/locales/fr/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/fr/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-name-last_name.js"><span class="source">package/lib/locales/fr/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/fr/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-fr-name-first_name.js"><span class="source">package/lib/locales/fr/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-fr-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/en_BORK/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_BORK-lorem-words.js"><span class="source">package/lib/locales/en_BORK/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_BORK-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/el/address/county.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-address-county.js"><span class="source">package/lib/locales/el/address/county.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-address-county.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">101 B</span></div>
+      <div><span class="source">./lib/locales/el/app/name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-app-name.js"><span class="source">package/lib/locales/el/app/name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-app-name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/el/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-company-noun.js"><span class="source">package/lib/locales/el/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/el/company/bs_noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-company-bs_noun.js"><span class="source">package/lib/locales/el/company/bs_noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-company-bs_noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/el/company/bs_adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-company-bs_adjective.js"><span class="source">package/lib/locales/el/company/bs_adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-company-bs_adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/el/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-company-descriptor.js"><span class="source">package/lib/locales/el/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/el/company/bs_verb.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-company-bs_verb.js"><span class="source">package/lib/locales/el/company/bs_verb.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-company-bs_verb.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/el/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-company-adjective.js"><span class="source">package/lib/locales/el/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/el/team/creature.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-team-creature.js"><span class="source">package/lib/locales/el/team/creature.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-team-creature.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/el/phone_number/formats.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-phone_number-formats.js"><span class="source">package/lib/locales/el/phone_number/formats.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-phone_number-formats.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/el/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-lorem-words.js"><span class="source">package/lib/locales/pl/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/el/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-lorem-supplemental.js"><span class="source">package/lib/locales/nl/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/el/commerce/product_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-commerce-product_name.js"><span class="source">package/lib/locales/el/commerce/product_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-commerce-product_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/el/internet/avatar_uri.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-internet-avatar_uri.js"><span class="source">package/lib/locales/en/internet/avatar_uri.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-internet-avatar_uri.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">95.0 B</span></div>
+      <div><span class="source">./lib/locales/el/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-index.js"><span class="source">package/lib/locales/el/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/el/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-name-last_name.js"><span class="source">package/lib/locales/el/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/el/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-name-title.js"><span class="source">package/lib/locales/el/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/el/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-el-name-first_name.js"><span class="source">package/lib/locales/el/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-el-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/pt_BR/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pt_BR-address-index.js"><span class="source">package/lib/locales/pt_BR/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pt_BR-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/pt_BR/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pt_BR-address-country.js"><span class="source">package/lib/locales/pt_BR/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pt_BR-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/pt_BR/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pt_BR-lorem-words.js"><span class="source">package/lib/locales/pt_BR/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pt_BR-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/pt_BR/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pt_BR-name-first_name.js"><span class="source">package/lib/locales/pt_BR/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pt_BR-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/it/address/state_abbr.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-address-state_abbr.js"><span class="source">package/lib/locales/it/address/state_abbr.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-address-state_abbr.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/it/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-address-index.js"><span class="source">package/lib/locales/it/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/it/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-address-country.js"><span class="source">package/lib/locales/it/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/it/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-address-state.js"><span class="source">package/lib/locales/it/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/it/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-company-noun.js"><span class="source">package/lib/locales/it/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/it/company/bs_adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-company-bs_adjective.js"><span class="source">package/lib/locales/it/company/bs_adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-company-bs_adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/it/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-company-descriptor.js"><span class="source">package/lib/locales/it/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/it/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-company-adjective.js"><span class="source">package/lib/locales/it/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/it/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-name-last_name.js"><span class="source">package/lib/locales/it/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/it/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-it-name-first_name.js"><span class="source">package/lib/locales/it/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-it-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/pl/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-address-city_name.js"><span class="source">package/lib/locales/pl/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/pl/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-address-index.js"><span class="source">package/lib/locales/pl/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/pl/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-address-country.js"><span class="source">package/lib/locales/pl/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/pl/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-company-noun.js"><span class="source">package/lib/locales/pl/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/pl/company/bs_noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-company-bs_noun.js"><span class="source">package/lib/locales/pl/company/bs_noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-company-bs_noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/pl/company/bs_adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-company-bs_adjective.js"><span class="source">package/lib/locales/pl/company/bs_adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-company-bs_adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/pl/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-company-descriptor.js"><span class="source">package/lib/locales/pl/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/pl/company/bs_verb.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-company-bs_verb.js"><span class="source">package/lib/locales/pl/company/bs_verb.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-company-bs_verb.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/pl/company/adjetive.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-company-adjetive.js"><span class="source">package/lib/locales/pl/company/adjetive.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-company-adjetive.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/pl/phone_number/formats.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-phone_number-formats.js"><span class="source">package/lib/locales/pl/phone_number/formats.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-phone_number-formats.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/pl/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-lorem-words.js"><span class="source">package/lib/locales/sk/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/pl/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-lorem-supplemental.js"><span class="source">package/lib/locales/pl/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/pl/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-name-last_name.js"><span class="source">package/lib/locales/pl/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/pl/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-name-title.js"><span class="source">package/lib/locales/sk/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/pl/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-pl-name-first_name.js"><span class="source">package/lib/locales/pl/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-pl-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">131 B</span></div>
+      <div><span class="source">./lib/locales/en_IE/phone_number/formats.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-en_IE-phone_number-formats.js"><span class="source">package/lib/locales/en_IE/phone_number/formats.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-en_IE-phone_number-formats.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/zh_CN/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_CN-address-index.js"><span class="source">package/lib/locales/zh_TW/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_CN-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/zh_CN/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_CN-address-state.js"><span class="source">package/lib/locales/zh_CN/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_CN-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/zh_CN/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_CN-name-last_name.js"><span class="source">package/lib/locales/zh_CN/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_CN-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/zh_CN/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-zh_CN-name-first_name.js"><span class="source">package/lib/locales/zh_CN/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-zh_CN-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/sk/address/street.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-address-street.js"><span class="source">package/lib/locales/sk/address/street.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-address-street.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/sk/address/time_zone.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-address-time_zone.js"><span class="source">package/lib/locales/sk/address/time_zone.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-address-time_zone.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/sk/address/city_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-address-city_name.js"><span class="source">package/lib/locales/sk/address/city_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-address-city_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">111 B</span></div>
+      <div><span class="source">./lib/locales/sk/address/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-address-index.js"><span class="source">package/lib/locales/sk/address/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-address-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/sk/address/country.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-address-country.js"><span class="source">package/lib/locales/sk/address/country.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-address-country.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">109 B</span></div>
+      <div><span class="source">./lib/locales/sk/company/noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-company-noun.js"><span class="source">package/lib/locales/sk/company/noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-company-noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/sk/company/bs_noun.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-company-bs_noun.js"><span class="source">package/lib/locales/sk/company/bs_noun.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-company-bs_noun.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/sk/company/descriptor.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-company-descriptor.js"><span class="source">package/lib/locales/sk/company/descriptor.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-company-descriptor.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">115 B</span></div>
+      <div><span class="source">./lib/locales/sk/company/bs_verb.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-company-bs_verb.js"><span class="source">package/lib/locales/sk/company/bs_verb.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-company-bs_verb.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/sk/company/adjective.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-company-adjective.js"><span class="source">package/lib/locales/sk/company/adjective.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-company-adjective.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/sk/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-lorem-words.js"><span class="source">package/lib/locales/tr/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/sk/lorem/supplemental.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-lorem-supplemental.js"><span class="source">package/lib/locales/sk/lorem/supplemental.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-lorem-supplemental.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">123 B</span></div>
+      <div><span class="source">./lib/locales/sk/name/male_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-name-male_last_name.js"><span class="source">package/lib/locales/sk/name/male_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-name-male_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">127 B</span></div>
+      <div><span class="source">./lib/locales/sk/name/female_last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-name-female_last_name.js"><span class="source">package/lib/locales/sk/name/female_last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-name-female_last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">125 B</span></div>
+      <div><span class="source">./lib/locales/sk/name/male_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-name-male_first_name.js"><span class="source">package/lib/locales/sk/name/male_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-name-male_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">129 B</span></div>
+      <div><span class="source">./lib/locales/sk/name/female_first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-name-female_first_name.js"><span class="source">package/lib/locales/sk/name/female_first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-name-female_first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">105 B</span></div>
+      <div><span class="source">./lib/locales/sk/name/title.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-sk-name-title.js"><span class="source">package/lib/locales/sv/name/title.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-sk-name-title.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">119 B</span></div>
+      <div><span class="source">./lib/locales/de_CH/name/last_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_CH-name-last_name.js"><span class="source">package/lib/locales/de_CH/name/last_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_CH-name-last_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">121 B</span></div>
+      <div><span class="source">./lib/locales/de_CH/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-de_CH-name-first_name.js"><span class="source">package/lib/locales/de_CH/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-de_CH-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">107 B</span></div>
+      <div><span class="source">./lib/locales/ko/lorem/words.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-ko-lorem-words.js"><span class="source">package/lib/locales/ko/lorem/words.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-ko-lorem-words.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">113 B</span></div>
+      <div><span class="source">./lib/locales/nep/address/state.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nep-address-state.js"><span class="source">package/lib/locales/nep/address/state.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nep-address-state.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">117 B</span></div>
+      <div><span class="source">./lib/locales/nep/name/first_name.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-locales-nep-name-first_name.js"><span class="source">package/lib/locales/nep/name/first_name.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-locales-nep-name-first_name.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">87.0 B</span></div>
+      <div><span class="source">./lib/phone_number.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-phone_number.js"><span class="source">package/lib/phone_number.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-phone_number.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">75.0 B</span></div>
+      <div><span class="source">./lib/system.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-system.js"><span class="source">package/lib/system.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-system.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">73.0 B</span></div>
+      <div><span class="source">./lib/lorem.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-lorem.js"><span class="source">package/lib/lorem.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-lorem.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">77.0 B</span></div>
+      <div><span class="source">./lib/company.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-company.js"><span class="source">package/lib/company.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-company.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">73.0 B</span></div>
+      <div><span class="source">./lib/index.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-index.js"><span class="source">package/lib/index.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-index.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">71.0 B</span></div>
+      <div><span class="source">./lib/date.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-date.js"><span class="source">package/lib/date.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-date.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">79.0 B</span></div>
+      <div><span class="source">./lib/commerce.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-commerce.js"><span class="source">package/lib/commerce.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-commerce.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">75.0 B</span></div>
+      <div><span class="source">./lib/random.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-random.js"><span class="source">package/lib/random.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-random.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">73.0 B</span></div>
+      <div><span class="source">./lib/image.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-image.js"><span class="source">package/lib/image.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-image.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol diffcontrol-double">⊟</div>
+      <div><span class="diffsize">77.0 B</span></div>
+      <div><span class="source">./lib/helpers.js</span> vs.</div>
+      <div id="D.-.-.tgz-content---.-lib-helpers.js"><span class="source">package/lib/helpers.js</span>
+        <a class="anchor" href="#D.-.-.tgz-content---.-lib-helpers.js">¶</a>
+      </div>
+      </div>
+      <div class="comment">
+        Files identical despite different names<br/>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+Generated by
+<a href="https://diffoscope.org" rel="noopener noreferrer" target="_blank">
+diffoscope</a> 114
+</div>
+
+<div class="footer">
+  <p style="float: left;">
+    <a href="bravycvpgfyv.txt">View text version</a>.
+    Results are kept for 30 days.
+  </p>
+  <p style="float: right; text-align: right; line-height: 24px;">
+    Hosting provided by<br>
+    <a href="https://www.bytemark.co.uk"><img src="/static/images/bytemark.3a809d686731.png"></a>
+  </p>
+</div>
+</body>
+
+</html>
+
+
+
