@@ -92,7 +92,7 @@ lief==0.9.0
 linecache2==1.0.0
 llvmlite==0.26.0
 locket==0.2.0
-lxml==4.2.5
+lxml==4.6.2
 MarkupSafe==1.1.0
 matplotlib==2.2.3
 mccabe==0.6.1
